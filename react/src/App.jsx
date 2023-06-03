@@ -1,15 +1,18 @@
 import { Route, Routes } from "react-router-dom"
 import { Login } from "./views/Login"
-import Signup from "./views/SIgnup"
 import NotFound from "./views/NotFound"
+import Index from "./views/Index"
+import Register from "./views/Register"
+
 function App() {
 
   return (
     <>
       <Routes>
-        <Route path="/" element={<NotFound/>}/>
+        <Route path="/" element={<Index/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )
