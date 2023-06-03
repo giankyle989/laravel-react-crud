@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Login = () => {
   return (
@@ -18,7 +19,8 @@ export const Login = () => {
                 <input className='w-full border border-black p-1.5 focus:outline-none focus:border-sky-300 rounded' name='Password' type="password" />
               </div>
               <button className='bg-sky-500 hover:bg-sky-400 text-white font-bold py-2 px-4 border-b-4 border-sky-700 hover:border-sky-500 rounded my-2'>Login</button>
-              <p>Don't have an account? Register <a href='' className='text-sky-400 hover:text-sky-300'>here</a></p>
+              <p>Don't have an account? Register
+              <Link className='text-sky-400 hover:text-sky-300' to={"/register"}> here</Link></p>
             </form>
           </div>
         </div>

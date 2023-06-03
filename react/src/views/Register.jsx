@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
+
+
   return (
     <>
       <div className='h-screen flex justify-center items-center'>
@@ -26,7 +29,8 @@ const Register = () => {
                 <input className='w-full border border-black p-1.5 focus:outline-none focus:border-sky-300 rounded' name='Password' type="password" />
               </div>
               <button className='bg-sky-500 hover:bg-sky-400 text-white font-bold py-2 px-4 border-b-4 border-sky-700 hover:border-sky-500 rounded my-2'>Create account</button>
-              <p>Already have an account? Login <a href='' className='text-sky-400 hover:text-sky-300'>here</a></p>
+              <p>Already have an account? Login
+              <Link className='text-sky-400 hover:text-sky-300' to={"/login"}> here</Link></p>
             </form>
           </div>
         </div>
