@@ -1,17 +1,36 @@
 import { Route, Routes } from "react-router-dom"
 import { Login } from "./views/Login"
 import NotFound from "./views/NotFound"
-import Index from "./views/Index"
 import Register from "./views/Register"
+import GuestLayout from "./components/GuestLayout"
+import Dashboard from "./views/Dashboard"
+import Index from "./views/Index"
+import UserLayout from "./components/UserLayout"
 
 function App() {
 
   return (
     <>
       <Routes>
-        <Route path="/" element={<Index/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
+        
+        {/**Guest Layout Routes */}
+        <Route path="/" element={<GuestLayout/>}>
+          <Route path="/" element={<Index/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
+        </Route>
+
+        {/**Logged-in User Layout */}
+        <Route path="/" element={<UserLayout/>}>
+          <Route path="/dashboard" element={<Dashboard/>}/>
+        </Route>
+
+
+
+
+
+
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
