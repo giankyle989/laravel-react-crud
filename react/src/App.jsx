@@ -6,6 +6,7 @@ import GuestLayout from "./components/GuestLayout"
 import Dashboard from "./views/Dashboard"
 import Index from "./views/Index"
 import UserLayout from "./components/UserLayout"
+import Users from "./views/Users"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         {/**Logged-in User Layout */}
         <Route path="/" element={<UserLayout/>}>
           <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="/users" element={<Users/>}/>
         </Route>
 
 

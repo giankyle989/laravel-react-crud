@@ -1,12 +1,17 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Navigate, Outlet } from "react-router-dom";
+import { useStateContext } from "../contexts/ContextProvider";
+import Dashboard from "../views/Dashboard";
 
 const GuestLayout = () => {
-  return (
-    <>
-        <Outlet/>
-    </>
-  )
-}
+    const { user, token } = useStateContext();
+    if (token) {
+        return <Navigate to="/dashboard" />;
+    }
+    return (
+        <>
+            <Outlet />
+        </>
+    );
+};
 
-export default GuestLayout
+export default GuestLayout;
